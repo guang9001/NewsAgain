@@ -7,22 +7,18 @@
 //
 
 #import "ViewController.h"
-
+#import "VRHeadLine.h"
 @interface ViewController ()
-
+@property(nonatomic,strong)NSArray *headLines;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-      
+    [VRHeadLine headLinesWithSuccess:^(NSArray *headLines) {
+        NSLog(@"%@",headLines);
+    } failed:nil];
 }
 
 @end
